@@ -16,6 +16,7 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        _graphics.IsFullScreen = true;
     }
 
     protected override void Initialize()
@@ -30,7 +31,7 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         // TODO: use this.Content to load your game content here
-        Texture2D pixel = Content.Load<Texture2D>("pixel");
+        Texture2D pixel = Content.Load<Texture2D>("snowflake");
         particleSystem = new ParticleSystem(pixel);
     }
 
@@ -48,7 +49,7 @@ public class Game1 : Game
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
+        GraphicsDevice.Clear(Color.Black);
 
         // TODO: Add your drawing code here
         _spriteBatch.Begin();
